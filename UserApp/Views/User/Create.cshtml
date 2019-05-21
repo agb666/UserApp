@@ -1,0 +1,55 @@
+﻿@model UserApp.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form  method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span id="validationEmail" asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span id="validationPassword" asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input id="submitbutton" type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+@*<script type="text/javascript">
+        function validateForm()
+        {   var isFormVaid = true
+        var emailValue = document.getElementById("Name").value;
+        var pwValue = document.getElementById("Password").value;
+        if (emailValue ==null || emailValue == ""){
+        document.getElementById("validationEmail").textcontext = "Email Address Required"
+        isformValid = false
+        }
+        if (pwValue ==null || pwValue == ""){
+        document.getElementById("validationPassword").textcontext = "Password Address Required"
+        isformValid = false
+
+        return isValidForm
+        }
+
+        }
+    </script>*@
+
+
